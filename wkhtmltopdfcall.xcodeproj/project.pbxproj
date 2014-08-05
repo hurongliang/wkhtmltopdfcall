@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E46CBBD119908858006A4228 /* libwkhtmltox.0.12.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CBBCD19908858006A4228 /* libwkhtmltox.0.12.1.dylib */; };
+		E46CBBD219908858006A4228 /* libwkhtmltox.0.12.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CBBCE19908858006A4228 /* libwkhtmltox.0.12.dylib */; };
+		E46CBBD319908858006A4228 /* libwkhtmltox.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CBBCF19908858006A4228 /* libwkhtmltox.0.dylib */; };
+		E46CBBD419908858006A4228 /* libwkhtmltox.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CBBD019908858006A4228 /* libwkhtmltox.dylib */; };
+		E46CBBDA1990886F006A4228 /* dllbegin.inc in Sources */ = {isa = PBXBuildFile; fileRef = E46CBBD61990886F006A4228 /* dllbegin.inc */; };
+		E46CBBDB1990886F006A4228 /* dllend.inc in Sources */ = {isa = PBXBuildFile; fileRef = E46CBBD71990886F006A4228 /* dllend.inc */; };
+		E46CBBDC1990886F006A4228 /* image.h in Headers */ = {isa = PBXBuildFile; fileRef = E46CBBD81990886F006A4228 /* image.h */; };
+		E46CBBDD1990886F006A4228 /* pdf.h in Headers */ = {isa = PBXBuildFile; fileRef = E46CBBD91990886F006A4228 /* pdf.h */; };
+		E46CBBE3199088C3006A4228 /* wkhtmltopdfcall.c in Sources */ = {isa = PBXBuildFile; fileRef = E46CBBE2199088C3006A4228 /* wkhtmltopdfcall.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E46CBBC619908849006A4228 /* libwkhtmltopdfcall.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwkhtmltopdfcall.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46CBBCD19908858006A4228 /* libwkhtmltox.0.12.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwkhtmltox.0.12.1.dylib; sourceTree = "<group>"; };
+		E46CBBCE19908858006A4228 /* libwkhtmltox.0.12.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwkhtmltox.0.12.dylib; sourceTree = "<group>"; };
+		E46CBBCF19908858006A4228 /* libwkhtmltox.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwkhtmltox.0.dylib; sourceTree = "<group>"; };
+		E46CBBD019908858006A4228 /* libwkhtmltox.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwkhtmltox.dylib; sourceTree = "<group>"; };
+		E46CBBD61990886F006A4228 /* dllbegin.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = dllbegin.inc; path = wkhtmltox/dllbegin.inc; sourceTree = "<group>"; };
+		E46CBBD71990886F006A4228 /* dllend.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = dllend.inc; path = wkhtmltox/dllend.inc; sourceTree = "<group>"; };
+		E46CBBD81990886F006A4228 /* image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = image.h; path = wkhtmltox/image.h; sourceTree = "<group>"; };
+		E46CBBD91990886F006A4228 /* pdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pdf.h; path = wkhtmltox/pdf.h; sourceTree = "<group>"; };
+		E46CBBE2199088C3006A4228 /* wkhtmltopdfcall.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wkhtmltopdfcall.c; sourceTree = "<group>"; };
+		E46CBBE4199088D4006A4228 /* wkhtmltopdfcall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wkhtmltopdfcall.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E46CBBC319908849006A4228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46CBBD119908858006A4228 /* libwkhtmltox.0.12.1.dylib in Frameworks */,
+				E46CBBD419908858006A4228 /* libwkhtmltox.dylib in Frameworks */,
+				E46CBBD319908858006A4228 /* libwkhtmltox.0.dylib in Frameworks */,
+				E46CBBD219908858006A4228 /* libwkhtmltox.0.12.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E46CBBBD19908849006A4228 = {
+			isa = PBXGroup;
+			children = (
+				E46CBBD61990886F006A4228 /* dllbegin.inc */,
+				E46CBBD71990886F006A4228 /* dllend.inc */,
+				E46CBBD81990886F006A4228 /* image.h */,
+				E46CBBD91990886F006A4228 /* pdf.h */,
+				E46CBBE4199088D4006A4228 /* wkhtmltopdfcall.h */,
+				E46CBBE2199088C3006A4228 /* wkhtmltopdfcall.c */,
+				E46CBBCD19908858006A4228 /* libwkhtmltox.0.12.1.dylib */,
+				E46CBBCE19908858006A4228 /* libwkhtmltox.0.12.dylib */,
+				E46CBBCF19908858006A4228 /* libwkhtmltox.0.dylib */,
+				E46CBBD019908858006A4228 /* libwkhtmltox.dylib */,
+				E46CBBC719908849006A4228 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E46CBBC719908849006A4228 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E46CBBC619908849006A4228 /* libwkhtmltopdfcall.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E46CBBC419908849006A4228 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46CBBDC1990886F006A4228 /* image.h in Headers */,
+				E46CBBDD1990886F006A4228 /* pdf.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E46CBBC519908849006A4228 /* wkhtmltopdfcall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46CBBCA19908849006A4228 /* Build configuration list for PBXNativeTarget "wkhtmltopdfcall" */;
+			buildPhases = (
+				E46CBBC219908849006A4228 /* Sources */,
+				E46CBBC319908849006A4228 /* Frameworks */,
+				E46CBBC419908849006A4228 /* Headers */,
+				E46CBBE519908C89006A4228 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wkhtmltopdfcall;
+			productName = wkhtmltopdfcall;
+			productReference = E46CBBC619908849006A4228 /* libwkhtmltopdfcall.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E46CBBBE19908849006A4228 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Techpubs, Inc.";
+			};
+			buildConfigurationList = E46CBBC119908849006A4228 /* Build configuration list for PBXProject "wkhtmltopdfcall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E46CBBBD19908849006A4228;
+			productRefGroup = E46CBBC719908849006A4228 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E46CBBC519908849006A4228 /* wkhtmltopdfcall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E46CBBE519908C89006A4228 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change libwkhtmltox.0.dylib @loader_path/libwkhtmltox.0.12.1.dylib $TARGET_BUILD_DIR/libwkhtmltopdfcall.dylib";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E46CBBC219908849006A4228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46CBBDA1990886F006A4228 /* dllbegin.inc in Sources */,
+				E46CBBDB1990886F006A4228 /* dllend.inc in Sources */,
+				E46CBBE3199088C3006A4228 /* wkhtmltopdfcall.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E46CBBC819908849006A4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E46CBBC919908849006A4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E46CBBCB19908849006A4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E46CBBCC19908849006A4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E46CBBC119908849006A4228 /* Build configuration list for PBXProject "wkhtmltopdfcall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46CBBC819908849006A4228 /* Debug */,
+				E46CBBC919908849006A4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46CBBCA19908849006A4228 /* Build configuration list for PBXNativeTarget "wkhtmltopdfcall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46CBBCB19908849006A4228 /* Debug */,
+				E46CBBCC19908849006A4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E46CBBBE19908849006A4228 /* Project object */;
+}
