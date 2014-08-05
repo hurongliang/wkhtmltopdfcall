@@ -115,7 +115,7 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool headerenable
 	/* We will no longer be needing wkhtmltopdf funcionality */
 	wkhtmltopdf_deinit();
     
-	return true;
+	return 0;
 }
 
 int htmltopdfcall(const char* html, const char* pdf){
