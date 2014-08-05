@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "pdf.h"
 
 
@@ -31,14 +32,13 @@ void error(wkhtmltopdf_converter * c, const char * msg) {
 void warning(wkhtmltopdf_converter * c, const char * msg) {
 	fprintf(stderr, "Warning: %s\n", msg);
 }
-
-int htmltopdfcall(const char* html, const char* pdf){
+int htmltopdfcallwithheader(const char* html, const char* pdf, bool headerenable, const char* lefttext, const char*centertext, const char* righttext, const char* fontname, const char* fontsize){
     wkhtmltopdf_global_settings * gs;
 	wkhtmltopdf_object_settings * os;
 	wkhtmltopdf_converter * c;
     
 	/* Init wkhtmltopdf in graphics less mode */
-	wkhtmltopdf_init(0);
+	wkhtmltopdf_init(false);
     
 	/*
 	 * Create a global settings object used to store options that are not
@@ -58,6 +58,27 @@ int htmltopdfcall(const char* html, const char* pdf){
 	os = wkhtmltopdf_create_object_settings();
 	/* We want to convert to convert the qstring documentation page */
 	wkhtmltopdf_set_object_setting(os, "page", html);
+    
+    /*
+     * Set page information
+     */
+    if(headerenable==true){
+        if(lefttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.left", lefttext);
+        }
+        if(centertext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.center", centertext);
+        }
+        if(righttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.right", righttext);
+        }
+        if(fontname!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.fontName", fontname);
+        }
+        if(fontsize!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.fontSize", fontsize);
+        }
+    }
     
 	/* Create the actual converter object used to convert the pages */
 	c = wkhtmltopdf_create_converter(gs);
@@ -94,5 +115,9 @@ int htmltopdfcall(const char* html, const char* pdf){
 	/* We will no longer be needing wkhtmltopdf funcionality */
 	wkhtmltopdf_deinit();
     
-	return 0;
+	return true;
+}
+
+int htmltopdfcall(const char* html, const char* pdf){
+    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL);
 }
