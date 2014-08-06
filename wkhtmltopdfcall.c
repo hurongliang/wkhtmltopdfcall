@@ -32,7 +32,7 @@ void error(wkhtmltopdf_converter * c, const char * msg) {
 void warning(wkhtmltopdf_converter * c, const char * msg) {
 	fprintf(stderr, "Warning: %s\n", msg);
 }
-int htmltopdfcallwithheader(const char* html, const char* pdf, bool headerenable, const char* lefttext, const char*centertext, const char* righttext, const char* fontname, const char* fontsize){
+int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enable, const char* header_lefttext, const char* header_centertext, const char* header_righttext, const char* header_fontname, const char* header_fontsize, bool footer_enable, const char* footer_lefttext, const char* footer_centertext, const char* footer_righttext, const char* footer_fontname, const char* footer_fontsize){
     wkhtmltopdf_global_settings * gs;
 	wkhtmltopdf_object_settings * os;
 	wkhtmltopdf_converter * c;
@@ -60,23 +60,43 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool headerenable
 	wkhtmltopdf_set_object_setting(os, "page", html);
     
     /*
-     * Set page information
+     * Set page header information
      */
-    if(headerenable==true){
-        if(lefttext!=NULL){
-            wkhtmltopdf_set_object_setting(os, "header.left", lefttext);
+    if(header_enable==true){
+        if(header_lefttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.left", header_lefttext);
         }
-        if(centertext!=NULL){
-            wkhtmltopdf_set_object_setting(os, "header.center", centertext);
+        if(header_centertext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.center", header_centertext);
         }
-        if(righttext!=NULL){
-            wkhtmltopdf_set_object_setting(os, "header.right", righttext);
+        if(header_righttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.right", header_righttext);
         }
-        if(fontname!=NULL){
-            wkhtmltopdf_set_object_setting(os, "header.fontName", fontname);
+        if(header_fontname!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.fontName", header_fontname);
         }
-        if(fontsize!=NULL){
-            wkhtmltopdf_set_object_setting(os, "header.fontSize", fontsize);
+        if(header_fontsize!=NULL){
+            wkhtmltopdf_set_object_setting(os, "header.fontSize", header_fontsize);
+        }
+    }
+    /*
+     * Set page footer information
+     */
+    if(footer_enable==true){
+        if(footer_lefttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "footer.left", footer_lefttext);
+        }
+        if(footer_centertext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "footer.center", footer_centertext);
+        }
+        if(footer_righttext!=NULL){
+            wkhtmltopdf_set_object_setting(os, "footer.right", footer_righttext);
+        }
+        if(footer_fontname!=NULL){
+            wkhtmltopdf_set_object_setting(os, "footer.fontName", footer_fontname);
+        }
+        if(footer_fontsize!=NULL){
+            wkhtmltopdf_set_object_setting(os, "footer.fontSize", footer_fontsize);
         }
     }
     
@@ -119,5 +139,5 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool headerenable
 }
 
 int htmltopdfcall(const char* html, const char* pdf){
-    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL);
+    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL,false,NULL,NULL,NULL,NULL,NULL);
 }
