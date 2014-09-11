@@ -32,7 +32,7 @@ void error(wkhtmltopdf_converter * c, const char * msg) {
 void warning(wkhtmltopdf_converter * c, const char * msg) {
 	fprintf(stderr, "Warning: %s\n", msg);
 }
-int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enable, const char* header_lefttext, const char* header_centertext, const char* header_righttext, const char* header_fontname, const char* header_fontsize, bool footer_enable, const char* footer_lefttext, const char* footer_centertext, const char* footer_righttext, const char* footer_fontname, const char* footer_fontsize){
+int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enable, const char* header_lefttext, const char* header_centertext, const char* header_righttext, const char* header_fontname, const char* header_fontsize, bool header_line, const char* header_spacing, bool footer_enable, const char* footer_lefttext, const char* footer_centertext, const char* footer_righttext, const char* footer_fontname, const char* footer_fontsize, bool footer_line, const char* footer_spacing){
     wkhtmltopdf_global_settings * gs;
 	wkhtmltopdf_object_settings * os;
 	wkhtmltopdf_converter * c;
@@ -78,6 +78,14 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
         if(header_fontsize!=NULL){
             wkhtmltopdf_set_object_setting(os, "header.fontSize", header_fontsize);
         }
+        if(header_line==true){
+            wkhtmltopdf_set_object_setting(os, "header.line", "true");
+        }else{
+            wkhtmltopdf_set_object_setting(os, "header.line", "false");
+        }
+        if(header_spacing!=NULL){
+            wkhtmltopdf_set_object_setting(os,"header.spacing",header_spacing);
+        }
     }
     /*
      * Set page footer information
@@ -97,6 +105,14 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
         }
         if(footer_fontsize!=NULL){
             wkhtmltopdf_set_object_setting(os, "footer.fontSize", footer_fontsize);
+        }
+        if(footer_line==true){
+            wkhtmltopdf_set_object_setting(os, "footer.line", "true");
+        }else{
+            wkhtmltopdf_set_object_setting(os, "footer.line", "false");
+        }
+        if(footer_spacing!=NULL){
+            wkhtmltopdf_set_object_setting(os,"footer.spacing",footer_spacing);
         }
     }
     
@@ -139,5 +155,5 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
 }
 
 int htmltopdfcall(const char* html, const char* pdf){
-    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL,false,NULL,NULL,NULL,NULL,NULL);
+    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL,false,NULL,false,NULL,NULL,NULL,NULL,NULL,false,NULL);
 }
