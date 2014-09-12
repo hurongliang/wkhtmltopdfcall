@@ -32,7 +32,7 @@ void error(wkhtmltopdf_converter * c, const char * msg) {
 void warning(wkhtmltopdf_converter * c, const char * msg) {
 	fprintf(stderr, "Warning: %s\n", msg);
 }
-int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enable, const char* header_lefttext, const char* header_centertext, const char* header_righttext, const char* header_fontname, const char* header_fontsize, bool header_line, const char* header_spacing, bool footer_enable, const char* footer_lefttext, const char* footer_centertext, const char* footer_righttext, const char* footer_fontname, const char* footer_fontsize, bool footer_line, const char* footer_spacing){
+int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enable, const char* header_lefttext, const char* header_centertext, const char* header_righttext, const char* header_fontname, const char* header_fontsize, bool header_line, const char* header_spacing, bool footer_enable, const char* footer_lefttext, const char* footer_centertext, const char* footer_righttext, const char* footer_fontname, const char* footer_fontsize, bool footer_line, const char* footer_spacing, const char* margin_left, const char* margin_right, const char* margin_top, const char* margin_bottom, bool print_media_type){
     wkhtmltopdf_global_settings * gs;
 	wkhtmltopdf_object_settings * os;
 	wkhtmltopdf_converter * c;
@@ -48,6 +48,19 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
 	gs = wkhtmltopdf_create_global_settings();
 	/* We want the result to be storred in the file called test.pdf */
 	wkhtmltopdf_set_global_setting(gs, "out", pdf);
+    
+    if(margin_left!=NULL){
+        wkhtmltopdf_set_global_setting(gs, "margin.left", margin_left);
+    }
+    if(margin_right!=NULL){
+        wkhtmltopdf_set_global_setting(gs, "margin.right", margin_right);
+    }
+    if(margin_top!=NULL){
+        wkhtmltopdf_set_global_setting(gs, "margin.top", margin_top);
+    }
+    if(margin_bottom!=NULL){
+        wkhtmltopdf_set_global_setting(gs, "margin.bottom", margin_bottom);
+    }
     
 	//wkhtmltopdf_set_global_setting(gs, "load.cookieJar", "myjar.jar");
 	/*
@@ -116,6 +129,12 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
         }
     }
     
+    if(print_media_type==true){
+        wkhtmltopdf_set_object_setting(os,"web.printMediaType","true");
+    }else{
+        wkhtmltopdf_set_object_setting(os,"web.printMediaType","false");
+    }
+    
 	/* Create the actual converter object used to convert the pages */
 	c = wkhtmltopdf_create_converter(gs);
     
@@ -155,5 +174,5 @@ int htmltopdfcallwithheader(const char* html, const char* pdf, bool header_enabl
 }
 
 int htmltopdfcall(const char* html, const char* pdf){
-    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL,false,NULL,false,NULL,NULL,NULL,NULL,NULL,false,NULL);
+    return htmltopdfcallwithheader(html, pdf, false, NULL, NULL, NULL, NULL, NULL,false,NULL,false,NULL,NULL,NULL,NULL,NULL,false,NULL,NULL,NULL,NULL,NULL,false);
 }
